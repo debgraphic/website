@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Senior Graphic Designer Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+:root{
+  --bg:#0b0b10;
+  --card:#17171f;
+  --text:#ffffff;
+  --muted:#9ca3af;
+  --accent:#8b5cf6;
+  --border:rgba(255,255,255,0.08);
+}
+
+body.light{
+  --bg:#f5f5f5;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#52525b;
+  --border:rgba(0,0,0,0.08);
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
+  transition:0.4s ease;
+}
+
+/* BACKGROUND GLOW */
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+  radial-gradient(circle at top left, rgba(139,92,246,0.18), transparent 30%),
+  radial-gradient(circle at bottom right, rgba(6,182,212,0.08), transparent 35%);
+  z-index:-2;
+}
+
+.container{
+  width:90%;
+  max-width:1450px;
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  backdrop-filter:blur(12px);
+  background:rgba(0,0,0,0.2);
+  border-bottom:1px solid var(--border);
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 0;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:800;
+}
+
+.logo span{
+  color:var(--accent);
+}
+
+.nav-links{
+  display:flex;
+  gap:35px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--text);
+  transition:0.3s ease;
+}
+
+.nav-links a:hover{
+  color:var(--accent);
+}
+
+.theme-btn{
+  width:52px;
+  height:52px;
+  border:none;
+  border-radius:50%;
+  cursor:pointer;
+  background:var(--card);
+  color:var(--text);
+  font-size:18px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:80px 0;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.hero-text h1{
+  font-size:clamp(3rem,7vw,6.5rem);
+  line-height:0.95;
+  letter-spacing:-4px;
+  margin-bottom:30px;
+}
+
+.hero-text h1 span{
+  color:var(--accent);
+}
+
+.hero-text p{
+  color:var(--muted);
+  line-height:1.9;
+  font-size:18px;
+  margin-bottom:40px;
+}
+
+/* BUTTONS */
+
+.buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:16px 28px;
+  border-radius:16px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s ease;
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,#7c3aed,#a855f7);
+  color:white;
+}
+
+.btn-primary:hover{
+  transform:translateY(-4px);
+}
+
+.btn-secondary{
+  border:1px solid var(--border);
+  color:var(--text);
+}
+
+.btn-secondary:hover{
+  background:var(--card);
+}
+
+/* HERO IMAGES */
+
+.hero-visual{
+  position:relative;
+  height:500px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-card{
+  position:absolute;
+  width:300px;
+  height:420px;
+  border-radius:30px;
+  overflow:hidden;
+  //border:1px solid var(--border);
+  transition:0.4s ease;
+}
+
+.hero-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.card-a{
+  transform:rotate(-6deg) translateX(-70px);
+}
+
+.card-b{
+  transform:rotate(6deg) translateX(70px);
+}
+
+.hero-card:hover{
+  transform:scale(1.04);
+}
+
+/* SECTION */
+
+section{
+  padding:110px 0;
+}
+
+.section-title{
+  font-size:52px;
+  margin-bottom:18px;
+  letter-spacing:-2px;
+}
+
+.section-tag{
+  color:var(--accent);
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:2px;
+  margin-bottom:18px;
+}
+
+/* BRANDS */
+
+.brands-box{
+  padding:80px 50px;
+  border-radius:36px;
+  background:
+  linear-gradient(
+    135deg,
+    rgba(124,58,237,0.18),
+    rgba(6,182,212,0.08)
+  );
+  border:1px solid var(--border);
+  text-align:center;
+}
+
+.brands-box h2{
+  font-size:clamp(2rem,4vw,4rem);
+  line-height:1.2;
+  max-width:900px;
+  margin:auto;
+}
+
+.brands-box span{
+  color:var(--accent);
+}
+
+.brand-logos{
+  margin-top:50px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.brand-item{
+  padding:18px 30px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid var(--border);
+  font-weight:700;
+}
+
+/* PORTFOLIO */
+
+.slider-wrapper{
+  position:relative;
+}
+
+.horizontal-scroll{
+  display:flex;
+  gap:24px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  padding:10px 40px;
+}
+
+.horizontal-scroll::-webkit-scrollbar{
+  display:none;
+}
+
+/* CARDS */
+
+.horizontal-card{
+  min-width:420px;
+  height:560px;
+
+  position:relative;
+
+  border-radius:34px;
+
+  overflow:hidden;
+
+  flex-shrink:0;
+
+  text-decoration:none;
+
+  border:1px solid var(--border);
+
+  transition:0.45s ease;
+}
+
+.horizontal-card:hover{
+  transform:translateY(-10px) scale(1.02);
+}
+
+.horizontal-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.6s ease;
+}
+
+.horizontal-card:hover img{
+  transform:scale(1.06);
+}
+
+/* OVERLAY */
+
+.overlay{
+  position:absolute;
+  inset:0;
+
+  display:flex;
+  align-items:flex-end;
+
+  padding:30px;
+
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,0.72),
+    rgba(0,0,0,0.08),
+    transparent
+  );
+}
+
+.overlay h3{
+  color:white;
+  font-size:30px;
+}
+
+/* SCROLL BUTTONS */
+
+.scroll-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:20;
+
+  width:58px;
+  height:58px;
+
+  border:none;
+  border-radius:50%;
+
+  cursor:pointer;
+
+  background:rgba(15,15,20,0.75);
+
+  backdrop-filter:blur(12px);
+
+  color:white;
+
+  font-size:28px;
+
+  transition:0.3s ease;
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.scroll-btn:hover{
+  background:var(--accent);
+  transform:translateY(-50%) scale(1.08);
+}
+
+.left-btn{
+  left:-10px;
+}
+
+.right-btn{
+  right:-10px;
+}
+
+/* ABOUT */
+
+.about-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+
+  background:var(--card);
+
+  border:1px solid var(--border);
+
+  border-radius:34px;
+
+  padding:50px;
+}
+
+.about-box img{
+  width:100%;
+  border-radius:24px;
+}
+
+.about-content h2{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.about-content p{
+  color:var(--muted);
+  line-height:1.9;
+  margin-bottom:18px;
+}
+
+/* SKILLS */
+
+.skills-box{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:50px;
+}
+
+.skill{
+  margin-bottom:35px;
+}
+
+.skill-top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+
+.skill-bar{
+  width:100%;
+  height:14px;
+  background:rgba(255,255,255,0.08);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.skill-progress{
+  height:100%;
+  border-radius:20px;
+  background:linear-gradient(90deg,#7c3aed,#06b6d4);
+  animation:grow 2s ease forwards;
+}
+
+@keyframes grow{
+  from{
+    width:0;
+  }
+}
+
+/* CONTACT */
+
+.contact-box{
+  text-align:center;
+  background:linear-gradient(135deg,#7c3aed,#9333ea);
+  padding:70px 40px;
+  border-radius:34px;
+}
+
+.contact-box h2{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.contact-box p{
+  max-width:700px;
+  margin:auto;
+  line-height:1.9;
+  margin-bottom:35px;
+  color:rgba(255,255,255,0.9);
+}
+
+/* SCROLL ANIMATION */
+
+.reveal{
+  opacity:0;
+  transform:translateY(70px);
+  transition:1s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* FOOTER */
+
+footer{
+  padding:50px 0;
+  text-align:center;
+}
+
+footer p{
+  color:var(--muted);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:980px){
+
+.hero-grid,
+.about-box{
+  grid-template-columns:1fr;
+}
+
+.hero{
+  padding-top:100px;
+}
+
+.hero-visual{
+  margin-top:50px;
+}
+
+}
+
+@media(max-width:700px){
+
+.nav-links{
+  display:none;
+}
+
+.hero-text h1{
+  letter-spacing:-2px;
+}
+
+.section-title,
+.about-content h2,
+.contact-box h2{
+  font-size:38px;
+}
+
+.hero-card{
+  width:220px;
+  height:320px;
+}
+
+.card-a{
+  transform:rotate(-5deg) translateX(-40px);
+}
+
+.card-b{
+  transform:rotate(5deg) translateX(40px);
+}
+
+.horizontal-card{
+  min-width:82vw;
+  height:480px;
+}
+
+.overlay h3{
+  font-size:24px;
+}
+
+.about-box,
+.skills-box,
+.brands-box{
+  padding:30px;
+}
+
+.brand-item{
+  width:100%;
+}
+
+.scroll-btn{
+  width:46px;
+  height:46px;
+  font-size:22px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+Creative<span>Lite</span>
+</div>
+
+<div class="nav-links">
+<a href="#portfolio">Works</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
+
+<button class="theme-btn" id="themeToggle">
+☀
+</button>
+
+</nav>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div class="hero-text reveal">
+
+<h1>
+Creative<br>
+<span>Graphic Designer</span>
+</h1>
+
+<p>
+Creating premium branding, advertising campaigns,
+social media creatives, and modern
+digital experiences with bold art direction.
+</p>
+
+<div class="buttons">
+
+<a href="#portfolio" class="btn btn-primary">
+View Portfolio
+</a>
+
+<a href="https://www.behance.net/debgraphic991f" target="_blank" class="btn btn-secondary">
+Behance Profile
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-visual reveal">
+
+<div class="hero-card card-a">
+<img src="Img\top img 2-01.png">
+</div>
+
+<div class="hero-card card-b">
+<img src="Img\top img.png">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- BRANDS -->
+
+<section>
+
+<div class="container">
+
+<div class="brands-box reveal">
+
+<p class="section-tag">
+TRUSTED EXPERIENCE
+</p>
+
+<h2>
+Worked with several
+<span>International & Domestic Brands</span>
+providing creative solutions.
+</h2>
+
+<div class="brand-logos">
+
+<div class="brand-item">Rush Trampoline</div>
+<div class="brand-item">Chicco</div>
+<div class="brand-item">Rollins Inc.</div>
+<div class="brand-item">Hector Beverages</div>
+<div class="brand-item">Pidilite Industries</div>
+<div class="brand-item">Abbott India</div>
+<div class="brand-item">Philips</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+<div class="container">
+
+<div class="reveal">
+
+<p class="section-tag">
+SELECTED WORK
+</p>
+
+<h2 class="section-title">
+Featured Creative Projects
+</h2>
+
+</div>
+
+<div class="slider-wrapper reveal">
+
+<button class="scroll-btn left-btn" onclick="scrollPortfolio(-1)">
+❮
+</button>
+
+<div class="horizontal-scroll" id="portfolioSlider">
+
+<a href="https://www.behance.net/gallery/231196673/Chocolate-Brand-Banners" target="_blank" class="horizontal-card">
+<img src="Img\1200 Grid Mondelez.png">
+<div class="overlay">
+<h3>Mondelez UAE Branding</h3>
+</div>
+</a>
+
+<a href="https://www.behance.net/gallery/249337007/Bread-Magazine-Creative" target="_blank" class="horizontal-card">
+<img src="Img\1200 Grid Bonn.png">
+<div class="overlay">
+<h3>Bonn Magazine AD</h3>
+</div>
+</a>
+
+<a href="https://www.behance.net/gallery/211163303/Art-Crafts-Branding-for-Amazon" target="_blank" class="horizontal-card">
+<img src="Img\1200 Grid pidilite.png">
+<div class="overlay">
+<h3>Fevicryl Branding</h3>
+</div>
+</a>
+
+<a href="https://www.amazon.in/Neo-Paprika-Fibre-Rich-Topping-Non-GMO/dp/B096RPB55H?th=1" target="_blank" class="horizontal-card">
+<img src="Img\1200 Grid Neo Foods.png">
+<div class="overlay">
+<h3>Neo Foods Listing</h3>
+</div>
+</a>
+
+<a href="https://www.behance.net/gallery/201449959/Food-Products-Branding-for-Amazon" target="_blank" class="horizontal-card">
+<img src="Img\1200 Grid Paperboat.png">
+<div class="overlay">
+<h3>Paper Boat Branding</h3>
+</div>
+</a>
+
+<a href="https://www.behance.net/gallery/231926079/Business-Marketing-Emailer" target="_blank" class="horizontal-card">
+<img src="Img\1200 Grid Emailers.png">
+<div class="overlay">
+<h3>Marketing Newsletters</h3>
+</div>
+</a>
+
+</div>
+
+<button class="scroll-btn right-btn" onclick="scrollPortfolio(1)">
+❯
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="about-box reveal">
+
+<img src="Img\Gemini_Generated_Image_htukf5htukf5htuk.png">
+
+<div class="about-content">
+
+<h2>
+About Me
+</h2>
+
+<p>
+Hi! I’m Debaditya, a senior graphic designer with an experience of 10 years who focused on creating modern visual identities, advertising campaigns, packaging and digital experiences with a premium aesthetic.
+</p>
+
+<p>
+My work combines storytelling, bold typography,
+creative direction and clean layouts to create memorable visual communication.
+</p><br>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title reveal">
+Skills
+</h2>
+
+<div class="skills-box reveal">
+
+<div class="skill">
+<div class="skill-top">
+<span>Adobe Photoshop</span>
+<span>95%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width:95%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-top">
+<span>Adobe Illustrator</span>
+<span>90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width:90%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-top">
+<span>Figma</span>
+<span>40%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width:40%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-top">
+<span>After Effects</span>
+<span>25%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width:25%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-top">
+<span>AI Tools - Adobe Firefly, DALL-E,
+Google Gemini, ChatGPT, Runway</span>
+<span>75%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width:75%"></div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact-box reveal">
+
+<h2>
+Let's Work Together
+</h2>
+
+<p>
+Ready to build your next visual experience?</p>
+
+<a href="https://www.linkedin.com/in/debadityapatra" target="_blank" class="btn btn-secondary" style="background:white;color:#111827;">
+Get In Touch
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<p>
+© 2026 CreativeLite — Creative Graphic Designer Portfolio
+</p>
+
+</div>
+
+</footer>
+
+<script>
+
+/* THEME TOGGLE */
+
+const toggleBtn = document.getElementById('themeToggle');
+
+toggleBtn.addEventListener('click',()=>{
+
+document.body.classList.toggle('light');
+
+if(document.body.classList.contains('light')){
+toggleBtn.innerHTML='🌙';
+}else{
+toggleBtn.innerHTML='☀';
+}
+
+});
+
+/* PORTFOLIO SCROLL */
+
+function scrollPortfolio(direction){
+
+const slider =
+document.getElementById('portfolioSlider');
+
+const scrollAmount = 460;
+
+slider.scrollBy({
+left: direction * scrollAmount,
+behavior:'smooth'
+});
+
+}
+
+/* SCROLL REVEAL */
+
+window.addEventListener('scroll', reveal);
+
+function reveal(){
+
+const reveals = document.querySelectorAll('.reveal');
+
+for(let i = 0; i < reveals.length; i++){
+
+const windowHeight = window.innerHeight;
+
+const elementTop =
+reveals[i].getBoundingClientRect().top;
+
+const elementVisible = 120;
+
+if(elementTop < windowHeight - elementVisible){
+
+reveals[i].classList.add('active');
+
+}
+
+}
+
+}
+
+reveal();
+
+</script>
+
+</body>
+</html>
